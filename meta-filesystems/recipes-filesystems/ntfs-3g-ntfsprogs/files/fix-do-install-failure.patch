@@ -1,0 +1,35 @@
+From f101ae62d0d821e6d1f53c109680782106091181 Mon Sep 17 00:00:00 2001
+From: "Yue.Shen" <Yue.Shen@windriver.com>
+Date: Thu, 5 May 2016 14:36:40 +0800
+Subject: [PATCH] usr absolute path
+
+---
+ libntfs-3g/Makefile.am | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/libntfs-3g/Makefile.am b/libntfs-3g/Makefile.am
+index b84cf64..34d2423 100644
+--- a/libntfs-3g/Makefile.am
++++ b/libntfs-3g/Makefile.am
+@@ -56,15 +56,15 @@ endif
+ # And create ldscript or symbolic link from /usr
+ install-exec-hook: install-rootlibLTLIBRARIES
+ if INSTALL_LIBRARY
+-	if [ ! "$(rootlibdir)" -ef "$(libdir)" ]; then \
++	if [ ! "$(DESTDIR)/$(rootlibdir)" -ef "$(DESTDIR)/$(libdir)" ]; then \
+ 		$(MV) -f "$(DESTDIR)/$(libdir)"/libntfs-3g.so* "$(DESTDIR)/$(rootlibdir)";  \
+ 	fi
+ if GENERATE_LDSCRIPT
+-	if [ ! "$(rootlibdir)" -ef "$(libdir)" ]; then \
++	if [ ! "$(DESTDIR)/$(rootlibdir)" -ef "$(DESTDIR)/$(libdir)" ]; then \
+ 		$(install_sh_PROGRAM) "libntfs-3g.script.so" "$(DESTDIR)/$(libdir)/libntfs-3g.so"; \
+ 	fi
+ else
+-	if [ ! "$(rootlibdir)" -ef "$(libdir)" ]; then \
++	if [ ! "$(DESTDIR)/$(rootlibdir)" -ef "$(DESTDIR)/$(libdir)" ]; then \
+ 		$(LN_S) "$(rootlibdir)/libntfs-3g.so" "$(DESTDIR)/$(libdir)/libntfs-3g.so"; \
+ 	fi
+ endif
+--
+1.9.1
+

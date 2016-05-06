@@ -6,7 +6,8 @@ LICENSE = "GPLv2 & LGPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=59530bdf33659b29e73d4adb9f9f6552 \
                     file://COPYING.LIB;md5=f30a9716ef3762e3467a2f62bf790f0a"
 
-SRC_URI = "http://tuxera.com/opensource/ntfs-3g_ntfsprogs-${PV}.tgz"
+SRC_URI = "http://tuxera.com/opensource/ntfs-3g_ntfsprogs-${PV}.tgz \
+           file://fix-do-install-failure.patch"
 S = "${WORKDIR}/ntfs-3g_ntfsprogs-${PV}"
 
 SRC_URI[md5sum] = "2d6fb47ddf62b51733227126fe9227fe"
