@@ -1,0 +1,13 @@
+diff --git a/src/Makefile.am b/src/Makefile.am
+index e49cb4f..eed65d3 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -14,6 +14,8 @@ pmgr.c: mk-pmgr_c.sh pmgr.c.in policy.h
+ pmgr.h: mk-pmgr_h.sh pmgr.h.in policy.h
+ 	sh mk-pmgr_h.sh
+ 
++scan.c: gram.h 
++
+ BUILT_SOURCES = defpath.h pmgr.c pmgr.h
+ EXTRA_DIST = mk-pmgr_c.sh mk-pmgr_h.sh pmgr.c.in pmgr.h.in
+ 

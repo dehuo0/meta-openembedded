@@ -9,8 +9,11 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=073dc31ccb2ebed70db54f1e8aeb4c33"
 DEPENDS = "rpm indent-native"
 
-SRC_URI = "git://git.umip.org/umip.git"
-SRCREV = "428974c2d0d8e75a2750a3ab0488708c5dfdd8e3"
+# SRC_URI = "git://git.umip.org/umip.git"
+SRC_URI = "git://git.umip.org/umip/umip.git \
+           file://1.patch "
+
+SRCREV = "cbd441c5db719db554ff2b4fcb02fef88ae2f791"
 
 S = "${WORKDIR}/git"
 EXTRA_OE_CONF = "--enable-vt"
