@@ -15,6 +15,7 @@ SRC_URI = "http://swupdate.openvpn.org/community/releases/openvpn-${PV}.tar.gz \
            file://CVE-2017-7520.patch \
            file://CVE-2017-7521.patch \
            file://CVE-2017-7521-2.patch \
+           file://CVE-2016-6329.patch \
 "
 
 SRC_URI[md5sum] = "070bca95e478f88dff9ec6a221e2c3f7"
