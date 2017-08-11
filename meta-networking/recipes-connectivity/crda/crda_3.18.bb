@@ -29,13 +29,13 @@ do_compile() {
 do_install() {
     oe_runmake SBINDIR=${sbindir}/ install
 
-    install -d ${D}${libdir}/crda/
+    install -d ${D}${nonarch_libdir}/crda/
 
-    install -m 0644 ${WORKDIR}/wireless-regdb-2014.11.18/regulatory.bin ${D}${libdir}/crda/regulatory.bin
+    install -m 0644 ${WORKDIR}/wireless-regdb-2014.11.18/regulatory.bin ${D}${nonarch_libdir}/crda/regulatory.bin
 }
 
 
 RDEPENDS_${PN} = "udev"
-FILES_${PN} += "${libdir}crda/regulatory.bin \
+FILES_${PN} += "${nonarch_libdir}* \
                 ${base_libdir}/udev/rules.d/85-regulatory.rules \
 "
